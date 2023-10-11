@@ -64,4 +64,9 @@ hook global WinSetOption filetype=cpp %{
     set-option global indentwidth 2
 }
 
+hook global WinSetOption filetype=lua %{
+    set-option global tabstop     2
+    set-option global indentwidth 2
+}
+
 map global user e ':echo foo<ret>' -docstring 'useless print'
