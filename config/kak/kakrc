@@ -56,6 +56,7 @@ hook global WinSetOption filetype=(c|cpp) %{
     alias window lint-next-error clang-diagnostics-next
 
     lsp-enable-window
+    lsp-inlay-diagnostics-enable window
     map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
 }
 
@@ -67,6 +68,9 @@ hook global WinSetOption filetype=cpp %{
 hook global WinSetOption filetype=lua %{
     set-option global tabstop     2
     set-option global indentwidth 2
+
+    lsp-enable-window
+    lsp-inlay-diagnostics-enable window
 }
 
 map global user e ':echo foo<ret>' -docstring 'useless print'
