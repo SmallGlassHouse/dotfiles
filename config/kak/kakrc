@@ -15,6 +15,8 @@ plug "kak-lsp/kak-lsp" do %{
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
 
+plug "occivink/kakoune-gdb"
+
 # show line number
 add-highlighter global/ number-lines
 # wrap line to new line if length exceed
@@ -58,9 +60,10 @@ hook global WinSetOption filetype=(c|cpp) %{
     lsp-enable-window
     lsp-inlay-diagnostics-enable window
     map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
+    map global user a ':clangd-switch-source-header<ret>' -docstring 'Switch between source and header files'
 }
 
-hook global WinSetOption filetype=cpp %{
+hook global WinSetOption filetype=(c|cpp) %{
     set-option global tabstop     2
     set-option global indentwidth 2
 }
