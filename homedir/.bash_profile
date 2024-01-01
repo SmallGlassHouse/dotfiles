@@ -3,5 +3,5 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-export VISUAL=kak
-export EDITOR=kak
+export VISUAL=nvim
+export EDITOR=nvim

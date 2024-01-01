@@ -35,7 +35,7 @@ if [ -f "$userresources" ]; then
 
 fi
 
-if [ -f "$usermodmap" ]; then
+if [ -f "$usermodmap" || -L "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
