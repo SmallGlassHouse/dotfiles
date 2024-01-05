@@ -1,4 +1,5 @@
 vim.opt.number = true
+--vim.opt.stc = '%=%{v:relnum<10?v:relnum:v:lnum} '
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
